@@ -9,9 +9,18 @@
 .headerAndMainSec{
     display: flex;
 }
+
+/* starts side-navBar block */
+.profile{
+    border-bottom: 2px solid rgb(54, 53, 53) ;
+    padding-bottom: 0.6rem;
+    margin-bottom: 1.2rem;
+}
 .header{
+    top: 0;
     display: flex;
     flex-direction: column;
+    justify-content: flex-start;
     align-items: center;
     position: fixed;
     color:#F0F7CE ;
@@ -22,19 +31,21 @@
     padding: 0 20px;
 }
 
-.header h1{
+.headerFistSection h1{
     margin-top: 10px;
 }
 .roundContainer{
     display: inline-block;
     position: relative;
     margin-top: 20px;
+    margin-bottom: 20px;
+    height: 200px;
     width: 200px;
-    height: 40%;
     overflow: hidden;
-    border: 9px solid #454b56 ;
+    border: 0.5rem solid #454b56 ;
     border-radius: 50%;
     background-color:  #242c3b ;
+    
 }
 .shortImg{
     height: 100%;
@@ -46,51 +57,65 @@
     display: flex;
     justify-content:space-around;
     width: 100%;    
-    margin-top: 30px;
+    margin-top: 2rem;
 }
 .socialMediaIcons a {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 40px;
-    height: 40px;
-    margin-right: 5px;
+    width: 2.5rem;
+    height: 2.5rem;
+    margin-right: 0.3rem;
     background-color: #454b56;
     color:#F0F7CE ;
     text-decoration: none;
     border-radius: 50%;
-    transition: 1.5s;
+    transition: 0.5s;
 }
-.socialMediaIcons  :hover{
+.socialMediaIcons :hover{
     color:#0a75ad
 }
 .navBar{
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
-    height: 50%;
     width: 100%;
-    margin: 15px 0;
+    height: 100%;
     padding-left: 10px;
-    
+    border-bottom: 2px solid rgb(54, 53, 53) ;
+    margin-bottom: 0.6rem;
+    transition: 1s;
 }
 .navBar a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color:#F0F7CE ;
+    color:#a6a7a0 ;
+    margin-bottom: 2rem;
     text-decoration: none;
-    height: 20%;
-    width: 20%;
+    width: 100%;
     font-size: x-large;
-    /* transition: 5s; solucionar tema de transicion */
 }
 
-.navBar a :hover{
+.navBar a div, i{
+    transition: 0.5s;
+}
+
+.navBar a :hover i{
     color:#0a75ad
 }
 
+.navBar a :hover span{
+    color:#fff ;
+}
+
+.navBar a i{
+    width: 2rem;
+}
+
+.navBar span{
+    
+    margin-left: 0.3rem;
+}
+
 header button {
+    align-self: stretch;
     padding: 12px 30px;
     border-radius: 3%;
     border: none;
@@ -99,9 +124,18 @@ header button {
     color: #F0F7CE;
     cursor: pointer;
     transition: 1s;
-    margin-bottom: 7px;
+    margin-bottom: 0.5rem;
 }
 
 header button:hover{
     background-color: #243331;
+}
+/* finishes side-navBar block */
+
+main{
+    margin-left: 300px;
+}
+
+main section {
+    height: 100vh;
 }
