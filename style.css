@@ -18,6 +18,8 @@
 }
 .header{
     top: 0;
+    height: 100vh;
+    width: 16.35rem;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -25,9 +27,8 @@
     position: fixed;
     color:#F0F7CE ;
     margin-right: 20px;
-    height: 100vh;
     background-color:#23262c;
-    box-shadow: #242c3b  1px 10px 20px;
+    box-shadow: rgb(1, 1, 1)  1px 0px 20px;
     padding: 0 20px;
 }
 
@@ -133,9 +134,32 @@ header button:hover{
 /* finishes side-navBar block */
 
 main{
-    margin-left: 300px;
+    margin-left:16.35rem;
 }
 
 main section {
     height: 100vh;
+}
+
+.home{
+    background: linear-gradient(rgba(30, 31, 38, 0.60), rgba(30, 31, 38, 0.60)),
+    url(https://images5.alphacoders.com/876/876590.png);
+    background-attachment: fixed;
+    background-size: cover;
+    background-position:bottom;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;   
+}
+
+
+.home h2, h4 {
+    color: #F0F7CE;
+    font-size: xxx-large;
+    margin-left: 25%;
+}
+
+.home h4{
+    font-weight: lighter;
 }
