@@ -10,7 +10,7 @@
     display: flex;
 }
 
-/* starts side-navBar block */
+/* Side-navBar block */
 .profile{
     border-bottom: 2px solid rgb(54, 53, 53) ;
     padding-bottom: 0.6rem;
@@ -131,16 +131,27 @@ header button {
 header button:hover{
     background-color: #243331;
 }
-/* finishes side-navBar block */
+/* side-navBar block ends */
 
+/* Main Section block */
 main{
     margin-left:16.35rem;
+    background-color: #23262c;
+    color: #fff;
+    
 }
 
 main section {
-    height: 100vh;
+    border-bottom: 2px solid rgb(54, 53, 53) ;
+    margin-left: 2rem;
 }
 
+main section:first-child{
+    height: 100vh;
+}
+/* Main Section block ends*/
+
+/* home section block */
 .home{
     background: linear-gradient(rgba(30, 31, 38, 0.60), rgba(30, 31, 38, 0.60)),
     url(https://images5.alphacoders.com/876/876590.png);
@@ -153,7 +164,6 @@ main section {
     justify-content: center;   
 }
 
-
 .home h2, h4 {
     color: #F0F7CE;
     font-size: xxx-large;
@@ -163,3 +173,44 @@ main section {
 .home h4{
     font-weight: lighter;
 }
+/* home section block ends*/
+
+/* about section block */
+.about{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.about h2, p, h3, h5{
+    margin-bottom: 1rem;
+}
+
+section div img {
+    width: 15rem;
+    margin-right: 3rem;
+}
+
+.about ul li {
+    margin-bottom: 1rem;
+}
+.imgAndSkillUl{
+    display: flex;
+    /* justify-content: space-between; */
+}
+
+.personalInfoUl{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 15p;
+    height: 40%;
+    list-style: none;
+}
+
+.personalInfoUl strong{
+    margin-right: 0.3rem;
+}
+
+/* about section block ends*/
+
