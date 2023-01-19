@@ -50,28 +50,35 @@ const skillCombatProwess = [{
     percent: 99
 }];
 
+// Intellect list
 const ulIntellect = document.getElementById('ulIntellect');
+// Physical Fitness list
 const ulPhysicalFit = document.getElementById('ulPhysicalFit');
+// Combat Prowess list
 const ulCombatPro = document.getElementById('ulCombatPro');
+
+const docFragment = document.createDocumentFragment();
 
 // function to make dinamics skill list
 const dinamicUnorderedList = (skillList, listId)=>{
     skillList.forEach(value =>{
         
         const li = document.createElement('li');
-        const div = document.createElement('div');
+        const div = document.createElement('div'); //we use this div to make the skill bar
         const percentContainer = document.createElement('div');
-        const strong = document.createElement('strong');
+        const span = document.createElement('span');
     
         div.className= 'skillBar';
         div.style.width = `${value.percent}%`;
         percentContainer.textContent=`${value.percent}%`;
-        strong.textContent = value.skillName;
-        strong.appendChild(percentContainer);
-        li.appendChild(strong);
+        span.textContent = value.skillName;
+        span.appendChild(percentContainer);
+        li.appendChild(span);
         li.appendChild(div);
-        listId.appendChild(li);
+        docFragment.appendChild(li);
     })
+    console.log(docFragment)
+    listId.appendChild(docFragment)
 }
 
 dinamicUnorderedList(skillIntellect, ulIntellect);
