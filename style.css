@@ -1,8 +1,8 @@
 
 *{
-    box-sizing: border-box;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
 }
 
@@ -194,7 +194,7 @@ main section .sectionTitle{
     justify-content: space-around;
 }
 
-.about h2, .about p, .about h3, .about h5{
+.about h2, .about p, .about h5{
     margin-bottom: 20px;
 }
 
@@ -218,6 +218,7 @@ section div img {
     flex-wrap: wrap;
     width: 15p;
     height: 40%;
+    margin-top: 1rem;
     list-style: none;
 }
 /* poner color a los iconos del portal */
@@ -229,12 +230,11 @@ section div img {
     margin-right: 0.3rem;
 }
 
-
     /* education sub-section block */
 
-        .educationUl{
+        .grid-ul{
             display: flex;
-            justify-content: center;
+            justify-content:space-between;
             margin-top: 2rem;
             flex-wrap: wrap;
             width: 100%;
@@ -242,14 +242,18 @@ section div img {
             margin-bottom: 1rem;
         }
 
-        .educationUl .liContentainer{
+        .grid-ul__li-cont__title{
+            margin-bottom: 1rem;
+        }
+
+        .grid-ul__li-cont{
             position: relative;
             width: 40%;
-            padding-left: 2rem;
+            padding: 0 2rem 1rem 2rem;
             border-left: 1px solid lightseagreen;
         }
 
-        .educationUl .liContentainer::before{
+        .grid-ul__li-cont::before{
             content: "";
             display: flex;
             position: absolute;
@@ -276,9 +280,7 @@ section div img {
 }
 
 /* poner un media query para quie se centren las barras cuando se hace chico */
-.skills__intellect, 
-.skills__physical-fitness,
-.skills__combat-prowess{
+.skills__container{
     position: relative;
     display: flex;
     margin: 1rem ;
@@ -289,18 +291,16 @@ section div img {
     box-shadow: rgb(1, 1, 1)  1px 0 10px;
     border-radius: 10px;
 }
-.skills__intellect h5, 
-.skills__physical-fitness h5,
-.skills__combat-prowess h5{
+
+.skills h5{
     position: absolute;
     top: 1rem;
     left: 1rem;
     font-size: 1em;
 }
 
-    .skills__intellect__ul, 
-    .skills__physical-fitness__ul,
-    .skills__combat-prowess__ul{
+    
+    .skills__ul{
         display: flex;
         flex-wrap: wrap;
         width: 100%;
@@ -308,29 +308,164 @@ section div img {
         padding: 20px;
     }
 
-    .skills__intellect__ul li, 
-    .skills__physical-fitness__ul li,
-    .skills__combat-prowess__ul li{
+    .skills__ul li{
         width: 33%;
         padding: 0.6rem;
         margin: 1px;
         border-radius: 10px;
     }
 
-    .skills__intellect__ul li span, 
-    .skills__physical-fitness__ul li span,
-    .skills__combat-prowess__ul li span{
+    .skills__ul li div{
         display: flex;
         justify-content: space-between;
     }
+    
+    .skills__ul li div span{
+        padding-right: 1rem;
+    }
 
     .skillBar{
-        width: 100%;
         height: 0.5rem;
-        margin-top: 10px;
+        margin-top: 0.7rem;
         background-color: lightseagreen;
         border-radius: 1rem;
     }
 
+
 /* Skills section block ends */
 
+/* portfolio block */
+
+.portfolio{
+    position: relative;
+}
+.gallery{
+    display: grid;
+    width: 90%;
+    grid-template-columns: repeat(5, 1fr);
+    padding-bottom: 2rem;
+    gap: 20px;
+    padding-left: calc(10% - 2rem);
+}
+
+.gallery__item {
+    position: relative;
+}
+
+.gallery__item :hover{
+    filter: grayscale(60%); 
+}
+
+.gallery__item__img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    cursor: pointer;
+    transition: filter 0.5s ;
+}
+
+.gallery :nth-child( 1){
+grid-column-start: span 2;
+}
+.gallery :nth-child( 3){
+    grid-row-start: span 2;
+    grid-column-start: span 2;
+}
+.gallery :nth-child( 6){
+  grid-row-start: span 2;
+}
+.gallery :nth-child( 4){
+    grid-column-start: span 3;
+}
+.gallery :nth-child( 5){
+  grid-column-start: span 2;
+}
+
+.gallery :nth-child( 7){
+    grid-column-start: span 2;
+}
+
+.gallery :nth-child( 9){
+    grid-column-start: span 2;
+}
+.gallery :nth-child( 8){
+    grid-column-start: span 2;
+}
+
+.gallery__item h2{
+    position: absolute;
+    width: 100%;
+    padding-left: 0.5rem;
+    padding-bottom: 1rem;
+    bottom: 0;
+    left: 0;  
+    background: linear-gradient(rgba(255,255,255,0),rgba(0,0,0,2));
+}
+
+    /* sub-section modal window bock */
+        .portfolio__modal-window{
+            display: none;
+            align-items: center;
+            background-color: rgba(0, 0, 0,0.7);
+            height: 100vh;
+            width: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+        }
+        .portfolio__modal-window-active{
+            display: flex;
+        }
+
+        .portfolio__modal-window i{
+            position: absolute;
+            color: #454b56;
+            top: 0;
+            right: 0;
+            margin: 1rem;
+            cursor: pointer;
+            transition: color 0.5s;
+        }
+
+        .portfolio__modal-window i:hover{
+            color: #fff;
+        }
+
+        .portfolio__modal-window__title-text{
+            height: 100%;
+            margin-top: 20rem;
+        }
+
+        .portfolio__modal-window__title-text h2{
+            margin-bottom: 2rem;
+            color: #0a75ad;
+            text-decoration: underline;
+        }
+
+        .portfolio__modal-window__title-text p{
+            padding: 1rem;
+            width: 70%;
+            background: rgba(0, 0, 0,0.7);
+        }
+        .portfolio__modal-window img{
+            width: 60%;
+            max-height: 60%;
+            display: block;
+            object-fit: cover;
+            margin-left: 5rem;
+            top: -10rem;
+        }
+        .portfolio__modal-window img,
+        .portfolio__modal-window__title-text p{
+            border: 2px solid #fff;
+        }
+    /* sub-section modal window bock ends   */
+
+
+
+/* portfolio block ends */
+
+/* FIXME: arreglar las clases de las secciones padres los titulos y sub titulos */
+/* FIXME: arreglar nombres de las clases de las primeras secciones */
+/* FIXME: arreglar los colores */
+/* TODO:hacer las animaciones */
