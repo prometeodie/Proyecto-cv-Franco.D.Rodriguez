@@ -353,7 +353,7 @@ section div img {
 }
 
 .gallery__item :hover{
-    filter: grayscale(60%); 
+    filter: grayscale(70%); 
 }
 
 .gallery__item__img{
@@ -403,7 +403,7 @@ grid-column-start: span 2;
 }
 
     /* sub-section modal window bock */
-        .portfolio__modal-window{
+        .modal-window-container{
             display: none;
             align-items: center;
             background-color: rgba(0, 0, 0,0.7);
@@ -413,11 +413,12 @@ grid-column-start: span 2;
             top: 0;
             left: 0;
         }
-        .portfolio__modal-window-active{
+
+        .modal-window{
             display: flex;
         }
 
-        .portfolio__modal-window i{
+        .modal-window__icon{
             position: absolute;
             color: #454b56;
             top: 0;
@@ -427,45 +428,129 @@ grid-column-start: span 2;
             transition: color 0.5s;
         }
 
-        .portfolio__modal-window i:hover{
+        .modal-window__icon:hover{
             color: #fff;
         }
 
-        .portfolio__modal-window__title-text{
+        .modal-window_title-description{
             height: 100%;
             margin-top: 20rem;
         }
 
-        .portfolio__modal-window__title-text h2{
+        .modal-window__img-title{
             margin-bottom: 2rem;
-            color: #0a75ad;
+            color: #0c8fd5;
             text-decoration: underline;
         }
 
-        .portfolio__modal-window__title-text p{
+        .modal-window__description{
             padding: 1rem;
+            line-height: 30px;
             width: 70%;
+            font-weight: bold;
             background: rgba(0, 0, 0,0.7);
+            background: linear-gradient(to bottom left,rgba(151, 206, 76,0.7) , rgba(240, 225, 74,0.7), rgba(61, 55, 60,0.7) );
         }
-        .portfolio__modal-window img{
+        .modal-window__img{
             width: 60%;
             max-height: 60%;
             display: block;
             object-fit: cover;
-            margin-left: 5rem;
-            top: -10rem;
+            margin-left: 10%;
         }
-        .portfolio__modal-window img,
-        .portfolio__modal-window__title-text p{
+        .modal-window__img,
+        .modal-window__description{
             border: 2px solid #fff;
         }
     /* sub-section modal window bock ends   */
 
-
-
 /* portfolio block ends */
+
+/* contact block */
+    .contact{
+        display: none;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background: linear-gradient(to bottom right, rgba(151, 206, 76,0.9) , rgba(240, 225, 74,0.9) );
+        margin-left: 0; 
+    }
+
+    .contact__container{
+        padding: 2rem;
+        position: relative;
+    }
+
+    .contact__title{
+        color: #0a6190;
+    }
+
+    .contact__item{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .contact__item-title{
+        margin-bottom: 0.4rem;
+    }
+
+    .contact__item,
+    .contact__title,
+    .contact__description{
+        margin-bottom: 0.5rem;
+    }
+    .contact__container,
+    .contact__form-item{
+        background-color: #172120;
+    }
+    .contact__description,
+    .contact__form-item,
+    .contact__btn{
+        font-weight: bold;
+    }
+    .contact__form-item{
+        border: 2px solid #0a6190 ;
+        font-family: sans-serif;
+    }
+    .contact__form-item,
+    .contact__btn{
+        color: #fff;
+        padding: 0.5rem;
+        border-radius: 4px;
+    }
+    .contact__container,
+    .contact__form-item,
+    .contact__btn{
+        border-radius: 4px;
+    }
+
+    .contact__btn{
+        font-size: larger;
+        border: none;
+        background-color: #0a6190;
+        cursor: pointer;
+        transition: background-color 0.7s;
+    }
+
+    .contact__btn:hover{
+        background-color: #0c7cb8;
+    }
+
+/* contact block ends */
+
+/* class to open and close each gallery img or the form contact  */
+.pop-up__active{
+    display: flex;
+}
+/* -------- */
 
 /* FIXME: arreglar las clases de las secciones padres los titulos y sub titulos */
 /* FIXME: arreglar nombres de las clases de las primeras secciones */
 /* FIXME: arreglar los colores */
+/* FIXME: sacar el atributo margin-left 0 despues de arreglar todas las clases */
 /* TODO:hacer las animaciones */

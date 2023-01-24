@@ -200,26 +200,41 @@
                 <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid eius earum unde illum incidunt rem, deleniti, totam, quod quidem 
                     quia autem provident? Nam, nihil impedit.</h3>
                 <div class="gallery" id="gallery"></div>
-                <div class="portfolio__modal-window" id="modalWindow">
-                    <img src="https://blendswap.com/static/blendImages/2017/07/31/Blend/89075/a02482c6582a31ffeab16def39877cf2.jpg" alt="" id="modalWindowImg">
-                    <div class="portfolio__modal-window__title-text">
-                        <h2 id="modalWindowTitle">TEST</h2>
-                        <p id="modalWindowText">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum repudiandae quos cumque sit consequatur maiores illum aut odit, pariatur exercitationem rerum ab deserunt magni? Voluptatum!</p>
+                <div class="modal-window-container" id="modalWindow">
+                    <img class="modal-window__img" src="https://blendswap.com/static/blendImages/2017/07/31/Blend/89075/a02482c6582a31ffeab16def39877cf2.jpg" alt="" id="modalWindowImg">
+                    <div class="modal-window__title-description">
+                        <h2 class=" modal-window__img-title" id="modalWindowTitle">TEST</h2>
+                        <p class=" modal-window__description" id="modalWindowText">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum repudiandae quos cumque sit consequatur maiores illum aut odit, pariatur exercitationem rerum ab deserunt magni? Voluptatum!</p>
                     </div>
-                    <i class="fa-solid fa-xmark" id="modalWindowCloseMark"></i>
+                    <i class="fa-solid fa-xmark modal-window__icon" id="modalWindowCloseMark"></i>
                 </div>
             </section>
 
-            <section id="contact"><!-- contact form -->  <!-- si hay tiempo agregarles datos extras como location, E'mail, phone number -->
-                <h2>contact</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque, culpa! Ipsam quibusdam voluptates expedita!</p>
-                <form action="submit">
-                    <input type="text">
-                    <input type="text">
-                    <input type="text">
-                    <textarea name="menssage" id="textAreaMenssg" cols="30" rows="10"></textarea>
-                    <button>send menssage</button>
-                </form>
+            <section class="contact" id="contact"><!-- contact form -->  <!-- si hay tiempo agregarles datos extras como location, E'mail, phone number -->
+                <div class="contact__container">
+                    <h2 class="contact__title">Contact</h2>
+                    <p class="contact__description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque, culpa! Ipsam quibusdam voluptates expedita!</p>
+                    <form class="contact__form" action="submit">
+                        <div class="contact__item">
+                            <h3 class="contact__item-title">Your Name</h3>
+                            <input class="contact__form-item" type="text">
+                        </div>
+                        <div class="contact__item">
+                            <h3 class="contact__item-title">Your E-mail</h3>
+                            <input class="contact__form-item" type="text">
+                        </div>
+                        <div class="contact__item">
+                            <h3 class="contact__item-title">Subject</h3>
+                            <input class="contact__form-item" type="text">
+                        </div>
+                        <div class="contact__item">
+                            <h3 class="contact__item-title">Menssage</h3>
+                            <textarea class="contact__form-item" name="menssage" id="textAreaMenssg" cols="30" rows="10"></textarea>
+                        </div>
+                        <button class="contact__btn">Send Menssage</button>
+                    </form>
+                    <i class="fa-solid fa-xmark modal-window__icon" id="formCloseMark"></i>
+                </div>
             </section>
         </main>
     </div>

@@ -123,9 +123,14 @@ const modalWindowImg  = document.getElementById('modalWindowImg');
 const modalWindowText = document.getElementById('modalWindowText');
 const modalWindowTitle = document.getElementById('modalWindowTitle');
 const modalWindowCloseMark = document.getElementById('modalWindowCloseMark');
-
-
+//contact elements
+const contactBtn = document.getElementById('btnContact');
+const contactContainer = document.getElementById('contact');
+console.log(contactContainer)
+const formCloseMark = document.getElementById('formCloseMark');
+//skill list fragment
 const docFragment = document.createDocumentFragment();
+// img gallery fragment
 const docFragment2 = document.createDocumentFragment();
 // procedure to make dinamics skill list
 const dinamicUnorderedList = (skillList, listId)=>{
@@ -174,8 +179,8 @@ const dinamicImgGalery = (imgList,listId) =>{
 }
 
 // procedure to show the modal-window changing adding a class
-const modalWindowToggle = ()=>{
-    modalWindow.classList.toggle('portfolio__modal-window-active')
+const modalWindowToggle = (element)=>{
+    element.classList.toggle('pop-up__active')
 }
 
 // function to return the data of the selected image
@@ -190,7 +195,9 @@ const imageData = (imgList,imgSelected,imgData)=>{
     return imgData[index];
 }
 
-modalWindowCloseMark.addEventListener('click',()=>{modalWindowToggle()});
+modalWindowCloseMark.addEventListener('click',()=>{modalWindowToggle(modalWindow)});
+contactBtn.addEventListener('click',()=>{modalWindowToggle(contactContainer)} );
+formCloseMark.addEventListener('click',()=>{modalWindowToggle(contactContainer)} );
 
 
 
@@ -213,7 +220,7 @@ images.forEach(img => {
         modalWindowImg.setAttribute('alt', `${data.imgTitle}`);  
         modalWindowText.textContent = data.imgDescription;
         modalWindowTitle.textContent = data.imgTitle;
-        modalWindowToggle();
+        modalWindowToggle(modalWindow);
     })
 })
   
