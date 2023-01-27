@@ -109,6 +109,13 @@ const imgData = [{
     imgDescription: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, laudantium nihil dignissimos amet, quos repellat voluptatum dolores dolor veritatis dolorum sit, ducimus doloribus quidem assumenda consectetur. Amet at atque nam dicta magnam quaerat reiciendis expedita nihil, rerum reprehenderit temporibus minima maxime. Eius, ex? Animi, voluptatem.'
   },]
 
+  //Regular expressions 
+  const expressions = {
+	nameAndSubject: /^[a-zA-ZÀ-ÿ\s]{1,40}$/,
+	subject: /^[a-zA-ZÀ-ÿ\s0-9]{1,40}$/,
+	email: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/
+}
+
 // Intellect list
 const ulIntellect = document.getElementById('ulIntellect');
 // Physical Fitness list
@@ -126,12 +133,22 @@ const modalWindowCloseMark = document.getElementById('modalWindowCloseMark');
 //contact elements
 const contactBtn = document.getElementById('btnContact');
 const contactContainer = document.getElementById('contact');
-console.log(contactContainer)
 const formCloseMark = document.getElementById('formCloseMark');
+const contactForm = document.querySelector('#contactForm');
 //skill list fragment
 const docFragment = document.createDocumentFragment();
 // img gallery fragment
 const docFragment2 = document.createDocumentFragment();
+// form
+const inputs = document.querySelectorAll('#contactForm input, textarea');
+
+const fields = {
+    name:false,
+    email:false,
+    subject :false,
+    text:false
+}
+
 // procedure to make dinamics skill list
 const dinamicUnorderedList = (skillList, listId)=>{
     skillList.forEach(value =>{
@@ -191,14 +208,102 @@ const imageData = (imgList,imgSelected,imgData)=>{
            index = i;
         }
     })
-  
     return imgData[index];
 }
 
-modalWindowCloseMark.addEventListener('click',()=>{modalWindowToggle(modalWindow)});
-contactBtn.addEventListener('click',()=>{modalWindowToggle(contactContainer)} );
-formCloseMark.addEventListener('click',()=>{modalWindowToggle(contactContainer)} );
+//form validation
+const formValidation = (e)=>{
+    const field = e.target.name;
+    
+    switch (field){
+        case 'name':
+            formValidationClasses(field,expressions.nameAndSubject.test(e.target.value))
+            break;    
+        case 'email':
+            formValidationClasses(field,expressions.email.test(e.target.value))
+            break;    
+        case 'subject':
+            formValidationClasses(field,expressions.subject.test(e.target.value))
+            break;    
+        case 'text':
+            let isValid = false;
+            if(e.target.value){isValid = true;}
+            formValidationClasses(field,isValid)
+            break;    
+        }
+}
 
+const formValidationClasses = (field, isValid)=>{
+
+    if(isValid){
+        document.querySelector(`#${field}Group .contact__item-title` ).classList.add('contact__form-item-correct');
+        document.querySelector(`#${field}Group .contact__item-title` ).classList.remove('contact__form-item-incorrect');
+        document.querySelector(`#${field}Group .contact__validator-txt` ).classList.remove('contact__validator-txt-active');
+        fields[field] = true;
+    }else{
+        document.querySelector(`#${field}Group .contact__item-title` ).classList.add('contact__form-item-incorrect');
+        document.querySelector(`#${field}Group .contact__item-title` ).classList.remove('contact__form-item-correct');
+        document.querySelector(`#${field}Group .contact__validator-txt` ).classList.add('contact__validator-txt-active');
+        fields[field] = false;
+    }
+}
+
+// EVENT LISTENERS
+modalWindowCloseMark.addEventListener('click',()=>{modalWindowToggle(modalWindow)});
+//open and close the contact form 
+contactBtn.addEventListener('click',()=>{modalWindowToggle(contactContainer)} );
+formCloseMark.addEventListener('click',()=>{
+    modalWindowToggle(contactContainer);
+    document.querySelectorAll('.contact__form-item-correct , .contact__validator-txt-active, .contact__form-item-incorrect').forEach((element)=>{
+        element.classList.remove('contact__form-item-correct');
+        element.classList.remove('contact__validator-txt-active');
+        element.classList.remove('contact__form-item-incorrect');
+        document.querySelector('#contactUnsuccessfully').classList.remove('contact__unsuccessfully')
+        document.querySelector('#contactSuccessfully').classList.remove('contact__successfully')
+    });
+    contactForm.reset();
+    });
+
+// form
+
+contactForm.addEventListener('submit',handleform )
+
+async function  handleform (event){
+    event.preventDefault();
+    if( fields.name && fields.subject && fields.email && fields.text ){
+        const form = new FormData(this)
+
+        const response = await fetch(this.action,{
+        method: this.method,
+        body: form,
+        headers: {
+            'Accept': 'application/json'
+        }
+    })
+        if(response.ok){
+            document.querySelectorAll('.contact__form-item-correct').forEach((element)=>{
+               
+                element.classList.remove('contact__form-item-correct');
+            })
+            document.querySelector('#contactUnsuccessfully').classList.remove('contact__unsuccessfully')
+            document.querySelector('#contactSuccessfully').classList.add('contact__successfully')
+            setTimeout(()=>{
+                document.querySelector('#contactSuccessfully').classList.remove('contact__successfully')
+            },3000)
+            contactForm.reset();
+        }else{
+            alert('no funca')
+        }
+       
+    }else{
+       document.querySelector('#contactUnsuccessfully').classList.add('contact__unsuccessfully')
+    }
+}
+
+inputs.forEach((input)=>{
+    input.addEventListener('keyup',(e)=>{formValidation(e)})
+    input.addEventListener('blur',(e)=>{formValidation(e)})
+})
 
 
 // skills 
@@ -210,7 +315,6 @@ dinamicUnorderedList(skillCombatProwess, ulCombatPro);
 
 dinamicImgGalery(imgData,imgGallery);
 const images = document.querySelectorAll('.gallery__item__img')
-
 
 images.forEach(img => {
     img.addEventListener('click',()=>{
