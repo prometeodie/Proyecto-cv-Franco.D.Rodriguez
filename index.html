@@ -10,126 +10,126 @@
     <title>CV Web design</title>
 </head>
 <body>
-    <div class="headerAndMainSec">
+    <div class="header-and-main">
         <header class="header">
             <div class="profile">
-                <div class="roundContainer">
-                    <img src="https://www.xtrafondos.com/thumbs/vertical/1_3248.jpg"  class="shortImg" alt="mini imagen de Rick">
+                <div class="profile__round-container">
+                    <img src="https://www.xtrafondos.com/thumbs/vertical/1_3248.jpg"  class="profile__short-img" alt="mini imagen de Rick">
                 </div>
-                <h1>Rick Sanchez</h1>
-                <div class="socialMediaIcons">
-                    <a href="#">
+                <h1 class="header__full-name">Rick Sanchez</h1>
+                <div class="social-media-icons">
+                    <a class="social-media-icons__anchors" href="#">
                         <i class="fa-brands fa-instagram"></i>
                     </a>
-                    <a href="#">
+                    <a class="social-media-icons__anchors" href="#">
                         <i class="fa-brands fa-facebook-f"></i>
                     </a>
-                    <a href="#">
+                    <a class="social-media-icons__anchors" href="#">
                         <i class="fa-brands fa-twitter"></i>
                     </a>
-                    <a href="#">
+                    <a class="social-media-icons__anchors" href="#">
                         <i class="fa-brands fa-linkedin-in"></i>
                     </a>
-                    <a href="#">
+                    <a class="social-media-icons__anchors" href="#">
                         <i class="fa-brands fa-github"></i>
                     </a>  
                 </div>
             </div>
-            <div class="navBarAndBtn">
-                <nav class="navBar">
-                    <a href="#">
+            <div class="nav-bar-and-btn">
+                <nav class="nav-bar">
+                    <a class="nav-bar__anchor" href="#">
                        <div>
                             <i class="fa-solid fa-house-chimney"></i>
-                            <span>Home</span>
+                            <span class="nav-bar__name">Home</span>
                        </div>
                     </a>
-                    <a href="#about">
-                        <div>
-                            <i class="fa-solid fa-user"></i>
-                            <span>About</span>
+                    <a class="nav-bar__anchor" href="#about">
+                        <div class="nav-bar__icon-name">
+                            <i class="fa-solid fa-user nav-bar__icon"></i>
+                            <span class="nav-bar__name">About</span>
                         </div>
                     </a>
-                    <a href="#skills">
-                        <div>
-                            <i class="fa-solid fa-sheet-plastic"></i>
-                            <span>Skills</span>
+                    <a class="nav-bar__anchor" href="#skills">
+                        <div class="nav-bar__icon-name">
+                            <i class="fa-solid fa-sheet-plastic nav-bar__icon"></i>
+                            <span class="nav-bar__name">Skills</span>
                         </div>
                     </a>
-                    <a href="#professionalexperience">
-                        <div>
-                            <i class="fa-solid fa-list"></i>
-                            <span>Prof.Experience</span>
+                    <a class="nav-bar__anchor" href="#professionalexperience">
+                        <div class="nav-bar__icon-name">
+                            <i class="fa-solid fa-list nav-bar__icon"></i>
+                            <span class="nav-bar__name">Prof.Experience</span>
                         </div>
                     </a>
-                    <a href="#portfolio">
-                        <div>
-                            <i class="fa-solid fa-book"></i>
-                            <span>Portfolio</span>
+                    <a class="nav-bar__anchor" href="#portfolio">
+                        <div class="nav-bar__icon-name nav-bar__icon">
+                            <i class="fa-solid fa-book nav-bar__icon"></i>
+                            <span class="nav-bar__name">Portfolio</span>
                         </div>
                     </a>
-                </nav>
-                <button class="test" id="btnContact">contact</button>    
+                </nav> 
+                <button class="header__btn" id="btnContact">contact</button>    
             </div>  
         </header>
-        <main>
-            <section class="home" id="home"> <!-- home --> 
-                <h2 class="nameTitle">Rick Sanchez</h2>
-                <h4 class="profesionTitle">Cientifico</h4> <!-- poner animacion en el subtitle  -->  
+        <main class="main">
+            <section class="main__section home" id="home"> <!-- home --> 
+                <h2 class="home__full-name">Rick Sanchez</h2>
+                <h4 class="home__profesion">Cientifico</h4> <!-- poner animacion en el subtitle  -->  
             </section>
 
-            <section class="about" id="about"><!-- about -->
-                <div class="titleAndDescrptn">
-                    <h2 class="sectionTitle">About</h2>
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nisi enim commodi dolorem quo, 
+            <section class="main__section main__section--margin about" id="about"><!-- about -->
+                <div>
+                    <h2 class="main__section-title">About<div class="main__title-line"></div></h2>
+                    <p class="main__section-description">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nisi enim commodi dolorem quo, 
                         ratione sapiente! Veritatis amet cupiditate sed in.</p>
                 </div>
-                <div class="imgAndSkillUl">
+                <div class="about__img-ul">
                     <div>
-                        <img src="https://www.geekmi.news/__export/1657911336768/sites/debate/img/2021/07/20/rick4_2.jpg_375108060.jpg" alt="Rick S full body">
+                        <img class="about__img" src="https://www.geekmi.news/__export/1657911336768/sites/debate/img/2021/07/20/rick4_2.jpg_375108060.jpg" alt="Rick S full body">
                     </div>
                     <div class="TitleDescptnAndUl">
                         <h2>Cientifico</h2>
-                        <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae, nesciunt doloribus atque 
-                            amet animi exercitationem.</h3>
-                        <ul class="personalInfoUl">
-                            <li><i class="fa-solid fa-code"></i><strong>Website:</strong> www.example.com</li>
-                            <li><i class="fa-solid fa-phone"></i><strong>Phone:</strong> +123 456 7890</li>
-                            <li><i class="fa-solid fa-location-dot"></i><strong>City:</strong> New York, USA</li>
-                            <li><i class="fa-solid fa-calendar-days"></i><strong>Age:</strong> 30</li>
-                            <li><i class="fa-solid fa-certificate"></i><strong>Degree:</strong> Master</li>
-                            <li><i class="fa-solid fa-envelope"></i><strong>E-mail:</strong> email@example.com</li>
+                        <p class="main__section-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae, nesciunt doloribus atque 
+                            amet animi exercitationem.</p>
+                        <ul class="about__ul">
+                            <li class="about__ul__li"><i class="about__ul__icon fa-solid fa-code"></i><strong class="about__ul__li-title">Website:</strong> www.example.com</li>
+                            <li class="about__ul__li"><i class="about__ul__icon fa-solid fa-phone"></i><strong class="about__ul__li-title">Phone:</strong> +123 456 7890</li>
+                            <li class="about__ul__li"><i class="about__ul__icon fa-solid fa-location-dot"></i><strong class="about__ul__li-title">City:</strong> New York, USA</li>
+                            <li class="about__ul__li"><i class="about__ul__icon fa-solid fa-calendar-days"></i><strong class="about__ul__li-title">Age:</strong> 30</li>
+                            <li class="about__ul__li"><i class="about__ul__icon fa-solid fa-certificate"></i><strong class="about__ul__li-title">Degree:</strong> Master</li>
+                            <li class="about__ul__li"><i class="about__ul__icon fa-solid fa-envelope"></i><strong class="about__ul__li-title">E-mail:</strong> email@example.com</li>
                         </ul>
                     </div>
                 </div>
                 <div class="education">
-                    <h2 class="sectionTitle">Education</h2>
-                    <ul class="grid-ul" >
-                        <li class="grid-ul__li-cont">
-                            <h3 class="grid-ul__li-cont__title">Lorem, ipsum dolor.</h3>
+                    <h2 class="main__section-title">Education<div class="main__title-line"></div></h2>
+                    <ul class="ul__with-description" >
+                        <li class="ul__with-description__li">
+                            <h3 class="ul__with-description__title">Lorem, ipsum dolor.</h3>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
                             Quidem eveniet suscipit aspernatur culpa ab reiciendis.</p>
                         </li>
                         
-                        <li class="grid-ul__li-cont">
-                            <h3 class="grid-ul__li-cont__title">Lorem, ipsum dolor.</h3>
+                        <li class="ul__with-description__li">
+                            <h3 class="ul__with-description__title">Lorem, ipsum dolor.</h3>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
                             Quidem eveniet suscipit aspernatur culpa ab reiciendis.
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam rerum dignissimos beatae tenetur enim. Modi assumenda distinctio sed aliquid. Laudantium modi ut autem voluptatibus natus deleniti! Quis laborum consectetur numquam!</p>
                         </li>
                         
-                        <li class="grid-ul__li-cont">
-                            <h3 class="grid-ul__li-cont__title">Lorem, ipsum dolor.</h3>
+                        <li class="ul__with-description__li">
+                            <h3 class="ul__with-description__title">Lorem, ipsum dolor.</h3>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
                             Quidem eveniet suscipit aspernatur culpa ab reiciendis.</p>
-                            <ul>
-                                <li>Lorem ipsum dolor sit.</li>
-                                <li>Lorem ipsum dolor sit.</li>
-                                <li>Lorem ipsum dolor sit.</li>
+                            <ul class="ul__with-description__ul">
+                                <li class="ul__with-description__ul__li">Lorem ipsum dolor sit.</li>
+                                <li class="ul__with-description__ul__li">Lorem ipsum dolor sit.</li>
+                                <li class="ul__with-description__ul__li">Lorem ipsum dolor sit.</li>
                             </ul>
                         </li>
                         
-                        <li class="grid-ul__li-cont">
-                            <h3 class="grid-ul__li-cont__title">Lorem, ipsum dolor.</h3>
+                        <li class="ul__with-description__li">
+                            <h3 class="ul__with-description__title">Lorem, ipsum dolor.</h3>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
                             Quidem eveniet suscipit aspernatur culpa ab reiciendis.</p>
                         </li>
@@ -140,65 +140,66 @@
 
             </section>
 
-            <section class="skills" id="skills"><!-- skills -->
-                <h2 class="sectionTitle">Skills</h2>
-                <h3>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repellat fuga, sed nihil est id esse quisquam voluptatibus nam a commodi!</h3>
+            <section class="main__section main__section--margin skills" id="skills"><!-- skills -->
+                <h2 class="main__section-title">Skills<div class="main__title-line"></div></h2>
+                <p class="main__section-description">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repellat fuga, sed nihil est id esse quisquam voluptatibus nam a commodi!</p>
                 <div class="skills__container">
-                <h5>Intellect</h5>                    
+                <h5 class="skills__title-section">Intellect</h5>                    
                     <ul class="skills__ul" id="ulIntellect"></ul>
                 </div>
 
+
                 <div class="skills__container">
-                <h5 >Physical Fitness</h5>                    
+                <h5 class="skills__title-section">Physical Fitness</h5>                    
                     <ul class="skills__ul" id="ulPhysicalFit"></ul>
                 </div>
 
                 <div class="skills__container">
-                <h5>Combat Prowess</h5>                    
+                <h5 class="skills__title-section">Combat Prowess</h5>                    
                     <ul class="skills__ul" id="ulCombatPro"></ul>
                 </div>
             </section>
 
-            <section class="proExperience" id="professionalexperience"><!-- experience-->
-                <h2 class="sectionTitle">Professional Experience</h2>
-                <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus et vitae totam inventore quaerat voluptatem,
-                    nesciunt aspernatur dolorum, optio quasi omnis illum id!</h3>
-                    <ul class="grid-ul">
-                        <li class="grid-ul__li-cont">
-                            <h3 class="grid-ul__li-cont__title" >Lorem ipsum dolor sit.</h3> 
+            <section class="main__section main__section--margin main__section--proExperience" id="professionalexperience"><!-- experience-->
+                <h2 class="main__section-title">Professional Experience <div class="main__title-line"></div></h2>
+                <p class="main__section-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus et vitae totam inventore quaerat voluptatem,
+                    nesciunt aspernatur dolorum, optio quasi omnis illum id!</p>
+                    <ul class="ul__with-description">
+                        <li class="ul__with-description__li">
+                            <h3 class="ul__with-description__title" >Lorem ipsum dolor sit.</h3> 
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente nulla odio ipsa voluptate, 
                             ipsum sunt ut, dolores, animi voluptatibus dolore hic suscipit illo fugiat ex! ipsum dolor 
                             sit amet consectetur adipisicing elit. Ex, necessitatibus?</p>
                         </li>
-                        <li class="grid-ul__li-cont">
-                            <h3 class="grid-ul__li-cont__title">Lorem ipsum dolor sit.</h3> 
+                        <li class="ul__with-description__li">
+                            <h3 class="ul__with-description__title">Lorem ipsum dolor sit.</h3> 
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad incidunt perspiciatis cum dolor consequatur. Sequi.
                              ipsum dolor sit amet consectetur adipisicing elit. Ex, necessitatibus?</p>
                         </li>
-                        <li class="grid-ul__li-cont">
-                            <h3 class="grid-ul__li-cont__title">Lorem ipsum dolor sit.</h3> 
+                        <li class="ul__with-description__li">
+                            <h3 class="ul__with-description__title">Lorem ipsum dolor sit.</h3> 
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore, quas rerum. Explicabo minus maxime dolorem quidem 
                                 corrupti saepe facilis reprehenderit quos dolore, ab voluptatem eligendi, veniam voluptatum voluptates tempore omnis 
                                 id culpa deleniti, quod soluta? Ipsam officia aut eum explicabo? ipsum dolor sit amet consectetur adipisicing elit. Ex, 
                                 necessitatibus?</p>
                         </li>
-                        <li class="grid-ul__li-cont">
-                            <h3 class="grid-ul__li-cont__title">Lorem ipsum dolor sit.</h3> 
+                        <li class="ul__with-description__li">
+                            <h3 class="ul__with-description__title">Lorem ipsum dolor sit.</h3> 
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
                             ipsum dolor sit amet consectetur adipisicing elit. Ex, necessitatibus?</p>
                         </li>
-                        <li class="grid-ul__li-cont">
-                            <h3 class="grid-ul__li-cont__title">Lorem ipsum dolor sit.</h3> 
+                        <li class="ul__with-description__li">
+                            <h3 class="ul__with-description__title">Lorem ipsum dolor sit.</h3> 
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione molestiae explicabo illo. ipsum dolor 
                             sit amet consectetur adipisicing elit. Ex, necessitatibus?</p>
                         </li>
                     </ul>
             </section>
 
-            <section class="portfolio" id="portfolio">
-                <h2>Portfolio</h2>
-                <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid eius earum unde illum incidunt rem, deleniti, totam, quod quidem 
-                    quia autem provident? Nam, nihil impedit.</h3>
+            <section class="main__section main__section--margin main__section--portfolio" id="portfolio">
+                <h2 class="main__section-title">Portfolio<div class="main__title-line"></div></h2>
+                <p class="main__section-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid eius earum unde illum incidunt rem, deleniti, totam, quod quidem 
+                    quia autem provident? Nam, nihil impedit.</p>
                 <div class="gallery" id="gallery"></div>
                 <div class="modal-window-container" id="modalWindow">
                     <img class="modal-window__img" src="https://blendswap.com/static/blendImages/2017/07/31/Blend/89075/a02482c6582a31ffeab16def39877cf2.jpg" alt="" id="modalWindowImg">
@@ -253,7 +254,14 @@
             </section>
         </main>
     </div>
-    <footer><span>#By Franco.D.Rodriguez</span></footer>
+    <footer class="footer">
+        <div class="footer__container">
+            <span class="footer__by">#By Franco.D.Rodriguez</span>
+                <a href="https://github.com/prometeodie?tab=repositories" target="_blank" class="footer__anchor"><i class="fa-brands fa-github" class="footer__git-icon"></i></a>
+                <a href="https://www.linkedin.com/in/franco-rodriguez-b121491b8" target="_blank" class="footer__anchor"><i class="fa-brands fa-linkedin"></i></a>
+        </div>
+        
+    </footer>
 
     <script src="/main.js"></script>
 </body>

@@ -154,12 +154,15 @@ const dinamicUnorderedList = (skillList, listId)=>{
     skillList.forEach(value =>{
         
         const li = document.createElement('li');
-        const div = document.createElement('div'); //we use this div to make the skill bar
+        const div = document.createElement('div'); //this div is to make the skill bar
         const percentContainer = document.createElement('div');
         const container = document.createElement('div');
         const span = document.createElement('span');
     
-        div.className= 'skillBar';
+        li.className= 'skills__li';
+        div.className= 'skills__skill-bar';
+        span.className= 'skills__span';
+        container.className= 'skills__name-percent';
         div.style.width = `${value.percent}%`;
         percentContainer.textContent=`${value.percent}%`;
         span.textContent = value.skillName;
@@ -181,7 +184,8 @@ const dinamicImgGalery = (imgList,listId) =>{
         const img =  document.createElement('img');
     
         div.className = 'gallery__item';
-        img.className = 'gallery__item__img';
+        img.className = 'gallery__img';
+        h2.className = 'gallery__img-title';
     
         h2.textContent = imgData.imgTitle;
         img.setAttribute('id',`img${i}` )
@@ -314,7 +318,7 @@ dinamicUnorderedList(skillCombatProwess, ulCombatPro);
 // img 
 
 dinamicImgGalery(imgData,imgGallery);
-const images = document.querySelectorAll('.gallery__item__img')
+const images = document.querySelectorAll('.gallery__img')
 
 images.forEach(img => {
     img.addEventListener('click',()=>{
