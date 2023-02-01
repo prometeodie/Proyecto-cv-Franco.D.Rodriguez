@@ -672,9 +672,40 @@ body::-webkit-scrollbar-thumb{
 
 /* media queries 'desktop first'*/
 
+@media screen and (max-width: px ){
+
+}
+
+
 @media screen and (max-width: 480px ){
-    .header__burger-menu{
+
+    /* section where classes shared the same propierties*/
+    .main,
+    .home,
+    .home__name-profesion,
+    .ul__with-description__li,
+    .skills__li,
+    .gallery,
+    .modal-window-container,
+    .modal-window__description{
+        width: 100%;
+    }
+
+    .header,
+    .home__name-profesion{
+        position: absolute;
+    }
+    .header__burger-menu,
+    .about__img-ul,
+    .ul__with-description,
+    .gallery{
         display: block;
+    }
+
+    /* ----------------------- */
+    
+    /* header block */
+    .header__burger-menu{
         color: #fff;
     }
 
@@ -687,7 +718,6 @@ body::-webkit-scrollbar-thumb{
     }
 
     .header{
-        position: absolute;
         transform: translateY(-100%);
         box-shadow: none;
         transition: transform 1.5s;
@@ -700,51 +730,79 @@ body::-webkit-scrollbar-thumb{
         box-shadow: rgb(1, 1, 1)  1px 0px 20px;
     }
 
+    /* header block ends */
+
+    /* main block */
     .main{
-        width: 100%;
         margin: 0;
     }
 
+    /* home block */
     .home{
-        width: 100%;
         background-attachment: unset; 
         background-position: 90%;
    }
 
    .home__name-profesion{
-    position: absolute;
-    width: 100%;
     top: 2rem;
    }
 
-   .about__img-ul{
-    display: block;
-   }
+   /* home block ends */
 
-   .ul__with-description{
-    display: block;
-   }
-   .ul__with-description__li{
-        width: 100%;
-    }
+   /* skills block */
 
     .skills__ul{
         flex-direction: column;
         flex-wrap: nowrap;
     }
-    .skills__li{
-        width: 100%;
-    }
-  
-    .contact__container{
-        width: 90%;
-        height: 90%;
+     /* skills block ends*/
+
+     /* contact modal window */
+     .contact__container{
+         width: 90%;
+         height: 90%;
         overflow: overlay;
     }
+    /* contact modal window ends */
 
+    /* gallery block */
+    .gallery{
+        padding-bottom: 0;
+        font-size: large;
+    }
+    .gallery__item{
+        margin-bottom: 1rem;
+    }
+
+        /* gallery modal window */
+        .modal-window-container {
+            overflow-y: overlay;
+        }
+        .pop-up__active {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 1rem;
+        }
+
+        .modal-window__img {
+            width: 60%;
+            max-height: 100%;
+            display: block;
+            object-fit: cover;
+            margin: 0;
+        }
+        .modal-window__img-title{
+            margin-top: 1rem;
+        }
+   
+    /* gallery block ends */
+
+    /* footer block */
     .footer{
         margin-left: 0;
     }
+    /* footer block ends */
 }
 
 
