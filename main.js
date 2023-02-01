@@ -116,6 +116,10 @@ const imgData = [{
 	email: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/
 }
 
+// burguer-menu Icon
+const sideNavIcon = document.querySelector('#closeHeaderIcon');
+// header
+const header =  document.querySelector('#header');
 // Intellect list
 const ulIntellect = document.getElementById('ulIntellect');
 // Physical Fitness list
@@ -252,10 +256,24 @@ const formValidationClasses = (field, isValid)=>{
     }
 }
 
+// procedure to open and close the side-bar
+
+const headerToggleClass = ()=>{
+    header.classList.toggle('header--show')
+}
+
 // EVENT LISTENERS
+
+// open-menu click 
+sideNavIcon.addEventListener('click',()=>{ 
+    headerToggleClass();
+})
 modalWindowCloseMark.addEventListener('click',()=>{modalWindowToggle(modalWindow)});
 //open and close the contact form 
-contactBtn.addEventListener('click',()=>{modalWindowToggle(contactContainer)} );
+contactBtn.addEventListener('click',()=>{  
+    modalWindowToggle(contactContainer); 
+    headerToggleClass();
+} );
 formCloseMark.addEventListener('click',()=>{
     modalWindowToggle(contactContainer);
     document.querySelectorAll('.contact__form-item-correct , .contact__validator-txt-active, .contact__form-item-incorrect').forEach((element)=>{

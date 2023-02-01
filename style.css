@@ -17,7 +17,7 @@
     font-family: 'Roboto', sans-serif;
 }
 
-/* section where classes shared the same atributes */
+/* section where classes shared the same propierties */
 .profile,
 .header,
 .social-media-icons,
@@ -86,6 +86,7 @@
    width: 100%;
 }
 
+.header,
 .portfolio,
 .gallery__item,
 .profile__round-container,
@@ -95,6 +96,7 @@
     position: relative;
 }
 
+.header__burger-menu,
 .skills__title-section,
 .gallery__img-title,
 .modal-window__icon,
@@ -133,7 +135,7 @@
 .ul__with-description{
     list-style: none;
 }
-/* section where classes shared the same atributes ends */
+/* section where classes shared the same propierties ends */
 
 /* Side-navBar block */
 .profile{
@@ -151,6 +153,13 @@
     background-color:#23262c;
     box-shadow: rgb(1, 1, 1)  1px 0px 20px;
     padding: 0 20px;
+}
+
+.header__burger-menu{
+    display: none;
+    top: 1rem;
+    left: 1rem;
+    z-index: 2;
 }
 
 .profile__round-container{
@@ -175,7 +184,6 @@
     justify-content:space-around;
     margin-top: 2rem;
 }
-/* FIXME se rompio la transicion de losiconos deredsocil */
 
 .social-media-icons__anchors{
     width: 2.5rem;
@@ -185,7 +193,7 @@
     color:var(--color-text);
     text-decoration: none;
     border-radius: 50%;
-    transition: 0.5s;
+    transition: color 0.5s;
 }
 .social-media-icons__anchors :hover{
     color:var(--icons-color-hover);
@@ -195,13 +203,11 @@
     height: 80%;
 }
 
-
 .nav-bar{
     height: 75%;
     padding-bottom: 20px;
     border-bottom: 2px solid rgb(54, 53, 53) ;
     margin-bottom: 0.6rem;
-    transition: 1s;
 }
 .nav-bar__anchor {
     color: var(--nav-bar-anchor-color) ;
@@ -276,6 +282,7 @@
 
 .home{
     height: 100vh;
+    width: 100%;
     margin-left: 0;
     background: linear-gradient(rgba(30, 31, 38, 0.60), rgba(30, 31, 38, 0.60)),
     url(https://images5.alphacoders.com/876/876590.png);
@@ -302,6 +309,8 @@
 .about__img {
     width: 20rem;
     margin-right: 3rem;
+    border: 2px solid var(--elements__main-color);
+    border-radius: 5px;
 }
 
 .about__ul__li{
@@ -652,7 +661,7 @@ grid-column-start: span 2;
 body::-webkit-scrollbar{
     width: 10px;
     /* border-radius: 5px; */
-    background-color: #243331;
+    background-color: #5c5d62;
 }
 body::-webkit-scrollbar-thumb{
     background-color: rgba(12, 143, 213,0.5);
@@ -660,5 +669,87 @@ body::-webkit-scrollbar-thumb{
 }
 
 /* scroll bar custom block ends*/
+
+/* media queries 'desktop first'*/
+
+@media screen and (max-width: 480px ){
+    .header__burger-menu{
+        display: block;
+        color: #fff;
+    }
+
+    .profile__round-container{
+        display: none;
+    }
+
+    .header__full-name{
+        margin-top: 2.5rem;
+    }
+
+    .header{
+        position: absolute;
+        transform: translateY(-100%);
+        box-shadow: none;
+        transition: transform 1.5s;
+        z-index: 1;
+    }
+
+    .header--show{
+    
+        transform: translateY(0);
+        box-shadow: rgb(1, 1, 1)  1px 0px 20px;
+    }
+
+    .main{
+        width: 100%;
+        margin: 0;
+    }
+
+    .home{
+        width: 100%;
+        background-attachment: unset; 
+        background-position: 90%;
+   }
+
+   .home__name-profesion{
+    position: absolute;
+    width: 100%;
+    top: 2rem;
+   }
+
+   .about__img-ul{
+    display: block;
+   }
+
+   .ul__with-description{
+    display: block;
+   }
+   .ul__with-description__li{
+        width: 100%;
+    }
+
+    .skills__ul{
+        flex-direction: column;
+        flex-wrap: nowrap;
+    }
+    .skills__li{
+        width: 100%;
+    }
+  
+    .contact__container{
+        width: 90%;
+        height: 90%;
+        overflow: overlay;
+    }
+
+    .footer{
+        margin-left: 0;
+    }
+}
+
+
+
+
+
 
 /* TODO:hacer las animaciones */
