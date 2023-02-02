@@ -163,7 +163,6 @@
 }
 
 .profile__round-container{
-    display: inline-block;
     margin-top: 20px;
     margin-bottom: 20px;
     height: 200px;
@@ -383,7 +382,6 @@
     margin: 1rem;
 }
 
-/* poner un media query para quie se centren las barras cuando se hace chico */
 .skills__container{
     margin: 1rem ;
     margin-right: 2rem;
@@ -672,10 +670,164 @@ body::-webkit-scrollbar-thumb{
 
 /* media queries 'desktop first'*/
 
-@media screen and (max-width: px ){
+@media only screen and ( max-width: 1200px){
+    
+    /* section where classes shared the same propierties*/
+    .modal-window__description,
+    .contact__container{
+        overflow: overlay;
+    }
+
+    /* ---------- */
+    
+    /* header block */
+    .profile__short-img{
+        margin-left: 30px;
+    }
+    .profile__round-container{
+        margin: 0.3rem 0;
+        height: 130px;
+        width: 130px;
+    }
+    /* header block ends */
+
+    .about__ul{
+        height: 100%;
+    }
+    .modal-window__description{
+        width: 95%;
+        max-height: 85vh;
+    }
+    .contact__container{
+        height: 90%;
+   }
+}
+@media only screen and ( max-width:  992px){
+
+    /* section where classes shared the same propierties*/
+    .main,
+    .ul__with-description__li,
+    .gallery,
+    .modal-window__description{
+        width: 100%;
+    }
+
+    /* ----------- */
+
+    /* header block */
+    
+    .header{
+        position: absolute;
+        transform: translateY(-100%);
+        box-shadow: none;
+        transition: transform 1.5s;
+        z-index: 1;
+    }
+
+    .header__burger-menu{
+        display: block;
+        color: #fff;
+    }
+
+    .profile__round-container{
+        display: none;
+    }
+
+    .header__full-name{
+        margin-top: 2.5rem;
+    }
+
+
+    .header--show{
+    
+        transform: translateY(0);
+        box-shadow: rgb(1, 1, 1)  1px 0px 20px;
+    }
+    /* header block ends */
+
+    /* home block */
+    .home{
+        background-position: right ;
+    }
+    /* home block ends */
+
+    /* main block */
+    .main{
+        margin: 0;
+    }
+    /* main block ends*/
+
+    /* about block */
+    .about__img-ul,
+    .about__ul{
+        flex-wrap: wrap; 
+    }
+
+    .ul__with-description__li{
+        margin-left: 0.5rem;
+    }
+    /* about block ends */
+
+    /* skills block */
+    .skills__li{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        width: 45%;
+    }
+    /* skills block ends */
+
+    /* gallery block */
+    
+        /* gallery modal window */
+            .modal-window-container {
+                overflow-y: overlay;
+                padding: 1rem;
+            }
+            .pop-up__active {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                padding: 1rem;
+            }
+
+            .modal-window__img {
+                max-height: 100%;
+                display: block;
+                object-fit: cover;
+                margin: 2.5rem;
+            }
+            .modal-window__img-title{
+                position: absolute;
+                top: 0;
+                margin-top: 1rem;
+            }
+    /* gallery block ends */
+
+    /* contact modal window */
+    .contact__container{
+        width: 90%;
+   }
+   /* contact modal window ends */
+
+    /* footer block */
+    .footer{
+        margin: 0;
+    }
+    /* footer block ends */
 
 }
 
+@media only screen and ( max-width: 576px){
+    .skills__li,
+    .gallery{
+        width: 100%;
+    }
+
+    .about__ul{
+        height: 100%;
+    }
+}
 
 @media screen and (max-width: 480px ){
 
@@ -749,11 +901,22 @@ body::-webkit-scrollbar-thumb{
 
    /* home block ends */
 
+   .about__img{
+    width: 100%;
+    margin-right: 0;
+   }
+
    /* skills block */
 
     .skills__ul{
         flex-direction: column;
         flex-wrap: nowrap;
+    }
+
+    .skills__container{
+        width: 100%;
+        margin: 0 0 0.8rem 0;
+        padding: 1rem 0 0 0;
     }
      /* skills block ends*/
 
@@ -804,10 +967,5 @@ body::-webkit-scrollbar-thumb{
     }
     /* footer block ends */
 }
-
-
-
-
-
 
 /* TODO:hacer las animaciones */

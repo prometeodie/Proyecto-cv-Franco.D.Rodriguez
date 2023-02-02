@@ -58,7 +58,7 @@ const imgData = [{
     id: 'img0',
     imgSrc: 'https://blendswap.com/static/blendImages/2017/07/31/Blend/89075/a02482c6582a31ffeab16def39877cf2.jpg',
     imgTitle: 'Portal Gun',
-    imgDescription: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, laudantium nihil dignissimos amet, quos repellat voluptatum dolores dolor veritatis dolorum sit, ducimus doloribus quidem assumenda consectetur. Amet at atque nam dicta magnam quaerat reiciendis expedita nihil, rerum reprehenderit temporibus minima maxime. Eius, ex? Animi, voluptatem.'
+    imgDescription: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, laudantium nihil dignissimos amet,sit amet consectetur adipisicing elit. Labore, laudantium nihil dignissimos amet,sit amet consectetur adipisicing elit. Labore, laudantium nihil dignissimos amet,sit amet consectetur adipisicing elit. Labore, laudantium nihil dignissimos amet,sit amet consectetur adipisicing elit. Labore, laudantium nihil dignissimos amet,sit amet consectetur adipisicing elit. Labore, laudantium nihil dignissimos amet,sit amet consectetur adipisicing elit. Labore, laudantium nihil dignissimos amet, quos repellat voluptatum dolores dolor veritatis dolorum sit, ducimus doloribus quidem assumenda consectetur. Amet at atque nam dicta magnam quaerat reiciendis expedita nihil, rerum reprehenderit temporibus minima maxime. Eius, ex? Animi, voluptatem.'
  },
  {
     id: 'img1',
