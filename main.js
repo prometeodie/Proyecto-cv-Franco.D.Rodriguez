@@ -120,14 +120,16 @@ const imgData = [{
 const sideNavIcon = document.querySelector('#closeHeaderIcon');
 // header
 const header =  document.querySelector('#header');
+// Nav-Bar
+const navBarAnchors = document.querySelectorAll('.nav-bar__anchor');
 // Intellect list
-const ulIntellect = document.getElementById('ulIntellect');
+const ulIntellect = document.getElementById('ulIntellect'); 
 // Physical Fitness list
-const ulPhysicalFit = document.getElementById('ulPhysicalFit');
+const ulPhysicalFit = document.getElementById('ulPhysicalFit'); 
 // Combat Prowess list
-const ulCombatPro = document.getElementById('ulCombatPro');
+const ulCombatPro = document.getElementById('ulCombatPro'); 
 // image gallery
-const imgGallery = document.getElementById('gallery');
+const imgGallery = document.getElementById('gallery'); 
 // modal window
 const modalWindow = document.getElementById('modalWindow');
 const modalWindowImg  = document.getElementById('modalWindowImg');
@@ -145,6 +147,10 @@ const docFragment = document.createDocumentFragment();
 const docFragment2 = document.createDocumentFragment();
 // form
 const inputs = document.querySelectorAll('#contactForm input, textarea');
+// scroll-Efect  Elements
+const elementList = document.querySelectorAll('.observer');
+// section identifier
+const sectionIdentifier = document.querySelectorAll('.sectionObserver');
 
 const fields = {
     name:false,
@@ -152,6 +158,25 @@ const fields = {
     subject :false,
     text:false
 }
+
+// "https://github.com/mattboldt/typed.js/" library documentation
+const typed = new Typed('.typed',{
+    strings: [
+        'Scientific',
+        'Pickle' ,
+        'Alcoholic',
+        'God',],
+        typeSpeed: 75,
+        startDelay: 300,
+        backSpeed: 75,
+        backDelay: 1500,
+        startDelay: 300,
+        loop: true,
+        shuffle: false,
+        showCursor: true,
+        cursorChar: '|',
+        contentType: 'html',
+});
 
 // procedure to make dinamics skill list
 const dinamicUnorderedList = (skillList, listId)=>{
@@ -262,13 +287,78 @@ const headerToggleClass = ()=>{
     header.classList.toggle('header--show')
 }
 
+const closeMarkHideClassToggle = ()=>{
+    sideNavIcon.classList.toggle('hide-burger-icon');
+}
+
+// scroll efect block
+
+const scrollEfect = (entries)=>{
+    entries.forEach((entry)=>{
+        if(entry.isIntersecting){
+            entry.target.classList.add('in-position');
+            elementObserver.unobserve(entry.target);
+        }
+    })
+}
+
+const elementObserver = new IntersectionObserver(scrollEfect,{
+    root:null,
+    rootMargin: '0px',
+    threshold: 0.4
+});
+
+elementList.forEach(value =>{
+    elementObserver.observe(value)
+})
+
+    // scroll efect for gallery only
+        const galleryObserver = new IntersectionObserver(scrollEfect,{
+            root:null,
+            rootMargin: '0px',
+            threshold: 0.1
+        });
+
+        galleryObserver.observe(imgGallery);
+    // ------
+        
+    // the next block is for turn on the icon and the name of the section that the user is currently on
+        const turnOnSection = (entries)=>{
+            entries.forEach((entry)=>{
+                const identifier = (entry.target.id);
+
+                const sectionIcon = document.querySelector(`#${identifier}Icon`);
+                const sectionName = document.querySelector(`#${identifier}Name`);
+                if(entry.isIntersecting){
+                    sectionIcon .classList.add('icon-section-selected');
+                    sectionName.classList.add('name-section-selected');
+                }else{
+                    sectionIcon .classList.remove('icon-section-selected');
+                    sectionName.classList.remove('name-section-selected');
+                }
+            })
+        }
+
+        const sectionObserver = new IntersectionObserver(turnOnSection,{ rootMargin:'-50% 0px -50% 0px'});
+
+        sectionIdentifier.forEach(section =>{
+            sectionObserver.observe(section)
+        })
+
+    // ----------
+
+// scroll efect block ends
+
 // EVENT LISTENERS
 
 // open-menu click 
 sideNavIcon.addEventListener('click',()=>{ 
     headerToggleClass();
 })
-modalWindowCloseMark.addEventListener('click',()=>{modalWindowToggle(modalWindow)});
+modalWindowCloseMark.addEventListener('click',()=>{
+    modalWindowToggle(modalWindow);
+    closeMarkHideClassToggle()
+});
 //open and close the contact form 
 contactBtn.addEventListener('click',()=>{  
     modalWindowToggle(contactContainer); 
@@ -327,6 +417,9 @@ inputs.forEach((input)=>{
     input.addEventListener('blur',(e)=>{formValidation(e)})
 })
 
+navBarAnchors.forEach((anchor)=>{
+    anchor.addEventListener('click', ()=>{ headerToggleClass()} );
+})
 
 // skills 
 dinamicUnorderedList(skillIntellect, ulIntellect);
@@ -346,7 +439,7 @@ images.forEach(img => {
         modalWindowImg.setAttribute('alt', `${data.imgTitle}`);  
         modalWindowText.textContent = data.imgDescription;
         modalWindowTitle.textContent = data.imgTitle;
+        closeMarkHideClassToggle();
         modalWindowToggle(modalWindow);
     })
 })
-  

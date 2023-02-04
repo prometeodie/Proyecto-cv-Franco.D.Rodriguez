@@ -1,14 +1,15 @@
 :root{
     --color-text:#F0F7CE;
     --icons-color-hover:#0a75ad;
+    --name-color-hover:#fff;
     --nav-bar-anchor-color:#a6a7a0;
     --header__btn-bg-color:#172120;
     --header__btn-bg-color-hover:#243331;
     --img__title__color:#0c8fd5;
     --contact-form__color:#0a6190;
     --elements__main-color: #69ad53;
+    --burger-btn-color: rgba(255, 255, 255,0.4);
 }
-
 
 *{
     margin: 0;
@@ -96,14 +97,14 @@
     position: relative;
 }
 
-.header__burger-menu,
+
 .skills__title-section,
 .gallery__img-title,
 .modal-window__icon,
 .contact__submit-msg{
     position: absolute;
 }
-
+.header__burger-menu,
 .header,
 .modal-window-container,
 .contact{
@@ -158,7 +159,7 @@
 .header__burger-menu{
     display: none;
     top: 1rem;
-    left: 1rem;
+    right: 1rem;
     z-index: 2;
 }
 
@@ -214,17 +215,17 @@
     font-size: x-large;
 }
 
+
 .nav-bar__icon-name, 
 .nav-bar__icon{
     transition: 0.5s;
 }
 
-.nav-bar__anchor :hover .nav-bar__icon{
+.nav-bar__anchor :hover .nav-bar__icon,.icon-section-selected{
     color: var(--icons-color-hover)
-}
-
-.nav-bar__anchor :hover .nav-bar__name{
-    color:#fff ;
+}                                     
+.nav-bar__anchor :hover .nav-bar__name,.name-section-selected{
+    color:var(--name-color-hover);
 }
 
 .nav-bar__name{   
@@ -250,6 +251,7 @@
 .main{
     margin-left: 16.35rem;
     background-color: #23262c;
+    overflow: hidden;
     color: #fff;
 }
 
@@ -259,7 +261,6 @@
 .main__section--margin{
     margin: 0 2rem;
 }
-
 
 .main__title-line{
     padding-top: 0.3rem;
@@ -349,8 +350,6 @@
         .ul__with-description__title{
             margin-bottom: 1rem;
         }
-
-        
 
         .ul__with-description__li::before{
             content: "";
@@ -517,6 +516,8 @@ grid-column-start: span 2;
             padding: 1rem;
             line-height: 30px;
             width: 70%;
+            max-height: 85vh;
+            overflow: overlay;
             background: rgba(0, 0, 0,0.7);
             background: linear-gradient(to bottom right,rgba(151, 206, 76,0.7) , rgba(240, 225, 74,0.7), rgba(61, 55, 60,0.7) );
         }
@@ -658,12 +659,20 @@ grid-column-start: span 2;
 /* scroll bar custom block*/
 body::-webkit-scrollbar{
     width: 10px;
-    /* border-radius: 5px; */
     background-color: #5c5d62;
 }
 body::-webkit-scrollbar-thumb{
     background-color: rgba(12, 143, 213,0.5);
     border-radius: 5px;
+}
+
+.modal-window__description::-webkit-scrollbar{
+    width: 5px;
+    border-radius: 5px;
+    background-color: #5c5d62;
+}
+.modal-window__description::-webkit-scrollbar-thumb{
+    background-color:  rgb(102, 9, 234, 0.8);
 }
 
 /* scroll bar custom block ends*/
@@ -679,8 +688,9 @@ body::-webkit-scrollbar-thumb{
     }
 
     /* ---------- */
-    
+
     /* header block */
+    
     .profile__short-img{
         margin-left: 30px;
     }
@@ -697,11 +707,10 @@ body::-webkit-scrollbar-thumb{
     .modal-window__description{
         width: 95%;
         max-height: 85vh;
+        overflow: visible;
     }
-    .contact__container{
-        height: 90%;
-   }
 }
+
 @media only screen and ( max-width:  992px){
 
     /* section where classes shared the same propierties*/
@@ -717,8 +726,9 @@ body::-webkit-scrollbar-thumb{
     /* header block */
     
     .header{
-        position: absolute;
         transform: translateY(-100%);
+        right: 0;
+        margin: 0;
         box-shadow: none;
         transition: transform 1.5s;
         z-index: 1;
@@ -726,7 +736,7 @@ body::-webkit-scrollbar-thumb{
 
     .header__burger-menu{
         display: block;
-        color: #fff;
+        color: var(--burger-btn-color);
     }
 
     .profile__round-container{
@@ -739,7 +749,6 @@ body::-webkit-scrollbar-thumb{
 
 
     .header--show{
-    
         transform: translateY(0);
         box-shadow: rgb(1, 1, 1)  1px 0px 20px;
     }
@@ -802,6 +811,8 @@ body::-webkit-scrollbar-thumb{
                 top: 0;
                 margin-top: 1rem;
             }
+
+          
     /* gallery block ends */
 
     /* contact modal window */
@@ -843,7 +854,6 @@ body::-webkit-scrollbar-thumb{
         width: 100%;
     }
 
-    .header,
     .home__name-profesion{
         position: absolute;
     }
@@ -857,9 +867,6 @@ body::-webkit-scrollbar-thumb{
     /* ----------------------- */
     
     /* header block */
-    .header__burger-menu{
-        color: #fff;
-    }
 
     .profile__round-container{
         display: none;
@@ -877,7 +884,6 @@ body::-webkit-scrollbar-thumb{
     }
 
     .header--show{
-    
         transform: translateY(0);
         box-shadow: rgb(1, 1, 1)  1px 0px 20px;
     }
@@ -956,9 +962,10 @@ body::-webkit-scrollbar-thumb{
             margin: 0;
         }
         .modal-window__img-title{
+            position: relative;
             margin-top: 1rem;
         }
-   
+        
     /* gallery block ends */
 
     /* footer block */
@@ -968,4 +975,32 @@ body::-webkit-scrollbar-thumb{
     /* footer block ends */
 }
 
-/* TODO:hacer las animaciones */
+.hide-burger-icon{
+    display: none;
+}
+
+/* scroll efect classes */
+
+.observer,
+.gallery{
+    opacity: 0;
+    transform: scale(0.9);
+    transition: .5s ease-in-out all;
+}
+.displaced-right{
+    transform:translateX(50px);
+}
+.displaced-left{
+    transform:translateX(-50px);
+}
+.displaced-bottom{
+    opacity: 0;
+    transform:translateY(50px);
+}
+
+.in-position{
+    transform:translateY(0) ;
+    transform:translateX(0) ;
+    opacity: 1;
+}
+/* ---- */
