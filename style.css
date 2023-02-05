@@ -296,6 +296,9 @@
 .home__profesion {
     color: var(--color-text);
     font-size: xxx-large;
+}
+
+.home__name-profesion{
     margin-left: 25%;
 }
 
@@ -758,6 +761,10 @@ body::-webkit-scrollbar-thumb{
     .home{
         background-position: right ;
     }
+
+     .home__name-profesion{
+        margin-left: 2rem;
+    }
     /* home block ends */
 
     /* main block */
@@ -829,7 +836,7 @@ body::-webkit-scrollbar-thumb{
 
 }
 
-@media only screen and ( max-width:  890px){
+@media only screen and ( max-width:  790px){
     .home{
         justify-content: flex-start; 
         align-items: center;}
@@ -838,10 +845,6 @@ body::-webkit-scrollbar-thumb{
         position: relative;
     }
 
-    .home__full-name,
-   .home__profesion{
-        margin: 0;
-   }
 }
 
 @media only screen and ( max-width: 576px){
@@ -874,9 +877,6 @@ body::-webkit-scrollbar-thumb{
         width: 100%;
     }
 
-    /* .home__name-profesion{
-        position: absolute;
-    } */
     .header__burger-menu,
     .about__img-ul,
     .ul__with-description,
