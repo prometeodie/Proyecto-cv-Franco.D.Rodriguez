@@ -838,6 +838,20 @@ body::-webkit-scrollbar-thumb{
     .about__ul{
         height: 100%;
     }
+    .home{
+        justify-content: flex-start; 
+        align-items: center;
+        background-attachment: unset; 
+        background-position: 90%;
+   }
+
+   .home__name-profesion{
+    position: relative;
+   }
+   .home__full-name,
+   .home__profesion{
+    margin: 0;
+   }
 }
 
 @media screen and (max-width: 480px ){
@@ -854,9 +868,9 @@ body::-webkit-scrollbar-thumb{
         width: 100%;
     }
 
-    .home__name-profesion{
+    /* .home__name-profesion{
         position: absolute;
-    }
+    } */
     .header__burger-menu,
     .about__img-ul,
     .ul__with-description,
