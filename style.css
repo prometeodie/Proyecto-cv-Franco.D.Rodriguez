@@ -829,6 +829,21 @@ body::-webkit-scrollbar-thumb{
 
 }
 
+@media only screen and ( max-width:  890px){
+    .home{
+        justify-content: flex-start; 
+        align-items: center;}
+    
+    .home__name-profesion{
+        position: relative;
+    }
+
+    .home__full-name,
+   .home__profesion{
+        margin: 0;
+   }
+}
+
 @media only screen and ( max-width: 576px){
     .skills__li,
     .gallery{
@@ -839,19 +854,10 @@ body::-webkit-scrollbar-thumb{
         height: 100%;
     }
     .home{
-        justify-content: flex-start; 
-        align-items: center;
         background-attachment: unset; 
         background-position: 90%;
    }
 
-   .home__name-profesion{
-    position: relative;
-   }
-   .home__full-name,
-   .home__profesion{
-    margin: 0;
-   }
 }
 
 @media screen and (max-width: 480px ){
@@ -913,10 +919,12 @@ body::-webkit-scrollbar-thumb{
     .home{
         background-attachment: unset; 
         background-position: 90%;
+        align-items: center;
    }
 
    .home__name-profesion{
     top: 2rem;
+    margin-left: 4rem;
    }
 
    /* home block ends */
